@@ -1,0 +1,27 @@
+/* light mode (default) */
+:root {
+  --color-bg: linear-gradient(0deg, #cacaca 0%, #f5f5f5 100%);
+  --color-text: #333333;
+  --color-header-bg: #FAFAFA;
+  --color-link: #1a73e8;
+  --color-btn-text: #ffffff;
+  --color-btn-text: light-dark(#ffffff,black); /* testar detecta automaticamente qual o tema do navegador e aplica a pagina */
+  --color-footer-text: #666666;
+  --color-outline: #adadad;
+  --color-btn-act-bg: linear-gradient(0deg, #0c48ef 0%, #376af8 100%);
+  --color-btn-act-bg-hover: linear-gradient(0deg,  #5e88fb 0%, #0c48ef 100%);
+  --color-btn-del-bg: linear-gradient(0deg,  #fb5e5e 0%, #ef0c0c 100%);
+  --color-btn-del-bg-hover: linear-gradient(0deg, #ef0c0c 0%, #f83737 100%);
+}
+
+/* Dark mode (WIP) */
+body.dark-mode {
+  --color-bg: #121212;
+  --color-text: #eeeeee;
+  --color-header-bg: #1f1f1f;
+  --color-link: #8ab4f8;
+  --color-btn-bg: #8ab4f8;
+  --color-btn-text: #121212;
+  --color-footer-text: #aaaaaa;
+  --color-outline: #626262;
+}

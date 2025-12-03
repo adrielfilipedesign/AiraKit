@@ -1,0 +1,59 @@
+/* btn appearance */
+.btn_act {
+  display: inline-block;
+  padding: 12px 40px;
+  background:  var(--color-btn-act-bg);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn_act:hover {
+  background: var(--color-btn-act-bg-hover);
+  transform: translateY(-3px);
+  transition: all 0.5s ease;
+  text-decoration: none;
+}
+
+.btn_del {
+  display: inline-block;
+  padding: 12px 40px;
+  background:  var(--color-btn-del-bg-hover);
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn_del:hover {
+  background: var(--color-btn-del-bg);
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+/* navbar */
+
+nav {
+  width: auto;
+  background-color: var(--color-header-bg);
+}
+
+.navbar-toggle {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.navbar-logo img {
+  width: 150px;
+}
+
+footer {
+  background-color: var(--color-header-bg);
+}

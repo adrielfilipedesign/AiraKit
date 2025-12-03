@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-25,-52)">
+        <g id="next-music" transform="matrix(1,0,0,1,25.5261,52.0261)">
+            <rect x="0" y="0" width="24" height="24" style="fill:none;"/>
+            <g transform="matrix(1.30579,0,0,0.758369,-1.1783,2.79054)">
+                <path d="M8,3.916L16,12L8,20.372" style="fill:rgb(235,235,235);fill-opacity:0;"/>
+            </g>
+            <g transform="matrix(1.30579,0,0,0.758369,-1.1783,2.79054)">
+                <path d="M7.322,5.906C6.684,5.262 6.47,3.846 6.844,2.748C7.219,1.65 8.04,1.281 8.678,1.926L16.678,10.01C17.085,10.421 17.337,11.17 17.34,11.982C17.344,12.794 17.099,13.55 16.696,13.972L8.696,22.344C8.064,23.005 7.239,22.658 6.855,21.57C6.471,20.482 6.672,19.061 7.304,18.4L13.386,12.035L7.322,5.906Z"/>
+            </g>
+            <g transform="matrix(0.81197,0,0,0.471571,-2.21011,6.15335)">
+                <path d="M8,3.916L16,12L8,20.372" style="fill:rgb(235,235,235);fill-opacity:0;"/>
+            </g>
+            <g transform="matrix(0.81197,0,0,0.471571,-2.21011,6.15335)">
+                <path d="M7.221,6.202C6.488,5.462 6.242,3.836 6.672,2.574C7.102,1.313 8.046,0.889 8.779,1.63L16.779,9.714C17.247,10.186 17.535,11.047 17.539,11.98C17.544,12.913 17.263,13.781 16.8,14.265L8.8,22.637C8.073,23.397 7.126,22.998 6.684,21.748C6.243,20.498 6.474,18.866 7.2,18.106L12.998,12.04L7.221,6.202Z"/>
+            </g>
+        </g>
+    </g>
+</svg>

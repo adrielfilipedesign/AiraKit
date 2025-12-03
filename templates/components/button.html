@@ -1,0 +1,19 @@
+{% macro btn_act(url, text) %}
+    <a href="{{ url }}" class="btn_act">{{ text }}</a>
+{% endmacro %}
+
+{% macro btn_del(url, text) %}
+    <a href="{{ url }}" class="btn_del">{{ text }}</a>
+{% endmacro %}
+
+{% macro btn_select(text) %}
+    <button class="btn" onclick="document.getElementById('fileInput').click()">
+        {{ text }}
+    </button>
+{% endmacro %}
+
+{% macro btn_process(text) %}
+    <button class="btn btn-process" id="processBtn" style="display: none;">
+        {{ text }}
+    </button>
+{% endmacro %}

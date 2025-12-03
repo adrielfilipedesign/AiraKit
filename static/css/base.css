@@ -1,0 +1,309 @@
+/* Reset/normalize */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Typography */
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400; 
+  letter-spacing: -1px;
+  background: var(--color-bg) no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  margin: 0;
+}
+
+strong {
+  font-weight: 700;
+}
+
+/* Grid System - 3 Colunas Responsivo */
+.cont {
+  display: grid;
+  grid-template-columns: 1fr min(1200px, 100%) 1fr;
+  gap: 0;
+  width: 100%;
+}
+
+.cont > * {
+  grid-column: 2;
+}
+
+/* Variações de largura do conteúdo */
+.cont-narrow {
+  display: grid;
+  grid-template-columns: 1fr min(800px, 100%) 1fr;
+}
+
+.cont-narrow > * {
+  grid-column: 2;
+}
+
+.cont-wide {
+  display: grid;
+  grid-template-columns: 1fr min(1400px, 100%) 1fr;
+}
+
+.cont-wide > * {
+  grid-column: 2;
+}
+
+/* Full width quando necessário */
+.full-width {
+  grid-column: 1 / -1 !important;
+}
+
+/* header */
+header {
+  background-color: var(--color-header-bg);
+  padding: 15px;
+  text-align: center;
+}
+
+/* Links */
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.logo {
+  max-width: 120px;
+  margin-left: 15px;
+}
+
+.icon img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+menu {
+  color: black;
+  background-color: rgb(200, 200, 200);
+}
+
+menu > ul > li {
+  border: 1px solid rgb(171, 171, 171);
+  border-radius: 20px;
+  margin: 10px;
+  padding: 3px 8px;
+  transition: all 0.3s ease;
+}
+
+menu > ul > li > a {
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+}
+
+menu > ul > li:hover {
+  border: 1px solid rgb(171, 171, 171);
+  border-radius: 20px;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: black;
+  transition: all 0.3s ease;
+}
+
+menu > ul > li:hover > a {
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+}
+
+/* alignments */
+.cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.centv {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.centh {
+  display: flex;
+  justify-content: center;
+}
+
+.centvh {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; 
+}
+
+/* text alignment */
+.txtc {
+  text-align: center;
+}
+
+.txtl {
+  text-align: left;
+}
+
+.txtr {
+  text-align: right;
+}
+
+/* padding */
+.p1 {
+  padding: 3rem;
+}
+
+.pt1 {
+  padding-top: 3rem;
+}
+
+.pb1 {
+  padding-bottom: 3rem;
+}
+
+.pl1 {
+  padding-left: 3rem;
+}
+
+.pr1 {
+  padding-right: 3rem;
+}
+
+.p2 {
+  padding: 2rem;
+}
+
+.pt2 {
+  padding-top: 2rem;
+}
+
+.pb2 {
+  padding-bottom: 2rem;
+}
+
+.pl2 {
+  padding-left: 2rem;
+}
+
+.pr2 {
+  padding-right: 2rem;
+}
+
+.p3 {
+  padding: 1rem;
+}
+
+.pt3 {
+  padding-top: 1rem;
+}
+
+.pb3 {
+  padding-bottom: 1rem;
+}
+
+.pl3 {
+  padding-left: 1rem;
+}
+
+.pr3 {
+  padding-right: 1rem;
+}
+
+.g1 {
+  gap: 3rem;
+}
+
+.g2 {
+  gap: 2rem;
+}
+
+.g3 {
+  gap: 1rem;
+}
+
+#itensMenu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100vh;
+  background-color: var(--color-header-bg);
+  transition: left 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+#itensMenu.active {
+  left: 0;
+}
+
+/* outlines */
+.b {
+  border: 1px solid var(--color-outline);
+}
+
+.bb {
+  border-bottom: 1px solid var(--color-outline);
+}
+
+.bt {
+  border-top: 1px solid var(--color-outline);
+}
+
+.bl {
+  border-left: 1px solid var(--color-outline);
+}
+
+.br {
+  border-right: 1px solid var(--color-outline);
+}
+
+/* Responsivity for mobile devices */
+@media (max-width: 768px) {
+  .cont,
+  .cont-narrow,
+  .cont-wide {
+    grid-template-columns: 1rem 1fr 1rem;
+  }
+  
+  .p1, .pt1, .pb1, .pl1, .pr1 {
+    padding: 1.5rem;
+  }
+  
+  .p2, .pt2, .pb2, .pl2, .pr2 {
+    padding: 1rem;
+  }
+}

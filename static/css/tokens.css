@@ -1,0 +1,115 @@
+/* ============================================
+   AiraKit — Design Tokens
+   Inclua esse arquivo antes do seu style.css
+   ============================================ */
+
+/* Tema claro (padrão) */
+:root {
+  /* Cores base */
+  --color-bg:          #FFFFFF;
+  --color-bg-subtle:   #F5F5F7;
+  --color-surface:     #EBEBEF;
+  --color-border:      #D1D1DB;
+
+  /* Texto */
+  --color-text:        #1A1A2E;
+  --color-text-muted:  #6B6B80;
+
+  /* Marca */
+  --color-primary:     #5B4EFF;
+  --color-primary-hover: #4A3EDD;
+
+  /* Feedback */
+  --color-success:     #22C55E;
+  --color-warning:     #F59E0B;
+  --color-danger:      #EF4444;
+  --color-info:        #3B82F6;
+
+  /* Tipografia */
+  --font-body:         'Inter', sans-serif;
+  --font-size-sm:      13px;
+  --font-size-md:      15px;
+  --font-size-lg:      18px;
+
+  /* Espaçamento */
+  --space-xs:          4px;
+  --space-sm:          8px;
+  --space-md:          16px;
+  --space-lg:          24px;
+  --space-xl:          40px;
+
+  /* Bordas */
+  --radius-sm:         4px;
+  --radius-md:         8px;
+  --radius-lg:         16px;
+  --radius-full:       999px;
+
+  /* Sombras */
+  --shadow-sm:         0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md:         0 4px 12px rgba(0,0,0,0.10);
+
+  /* Transições */
+  --transition:        0.2s ease;
+}
+
+/* Tema escuro — automático via sistema */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg:          #0E0E11;
+    --color-bg-subtle:   #16161A;
+    --color-surface:     #1E1E24;
+    --color-border:      #2A2A35;
+
+    --color-text:        #E8E8F0;
+    --color-text-muted:  #6B6B80;
+
+    --color-primary:     #7B68EE;
+    --color-primary-hover: #9B8FFF;
+
+    --shadow-sm:         0 1px 3px rgba(0,0,0,0.3);
+    --shadow-md:         0 4px 12px rgba(0,0,0,0.4);
+  }
+}
+
+/* Tema escuro — forçado manualmente via data-theme="dark" */
+[data-theme="dark"] {
+  --color-bg:          #0E0E11;
+  --color-bg-subtle:   #16161A;
+  --color-surface:     #1E1E24;
+  --color-border:      #2A2A35;
+
+  --color-text:        #E8E8F0;
+  --color-text-muted:  #6B6B80;
+
+  --color-primary:     #7B68EE;
+  --color-primary-hover: #9B8FFF;
+
+  --shadow-sm:         0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md:         0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* Tema claro — forçado manualmente via data-theme="light" */
+[data-theme="light"] {
+  --color-bg:          #FFFFFF;
+  --color-bg-subtle:   #F5F5F7;
+  --color-surface:     #EBEBEF;
+  --color-border:      #D1D1DB;
+
+  --color-text:        #1A1A2E;
+  --color-text-muted:  #6B6B80;
+
+  --color-primary:     #5B4EFF;
+  --color-primary-hover: #4A3EDD;
+
+  --shadow-sm:         0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md:         0 4px 12px rgba(0,0,0,0.10);
+}
+
+/* Aplica cor de fundo e texto ao body automaticamente */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--font-size-md);
+  transition: background-color var(--transition), color var(--transition);
+}

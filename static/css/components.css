@@ -57,3 +57,114 @@ nav {
 footer {
   background-color: var(--color-header-bg);
 }
+
+/* btn appearance */
+.btn_act {
+  display: inline-block;
+  padding: 12px 40px;
+  background:  var(--color-btn-act-bg);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn_act:hover {
+  background: var(--color-btn-act-bg-hover);
+  transform: translateY(-3px);
+  transition: all 0.5s ease;
+  text-decoration: none;
+}
+
+.btn_del {
+  display: inline-block;
+  padding: 12px 40px;
+  background:  var(--color-btn-del-bg-hover);
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn_del:hover {
+  background: var(--color-btn-del-bg);
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+/* navbar */
+
+nav {
+  width: auto;
+  background-color: var(--color-header-bg);
+}
+
+.navbar-toggle {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.navbar-logo img {
+  width: 150px;
+}
+
+footer {
+  background-color: var(--color-header-bg);
+}
+/* btn_github — preto no tema claro, branco no tema escuro */
+.btn_github {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: #000000;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #000000;
+}
+
+.btn_github:hover {
+  background: #333333;
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+
+/* Dark mode — inverte as cores */
+body.dark-mode .btn_github {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+body.dark-mode .btn_github:hover {
+  background: #e0e0e0;
+}
+
+/* Fontes brancas no dark mode */
+body.dark-mode {
+  color: #ffffff;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode li,
+body.dark-mode a:not(.btn_act):not(.btn_del):not(.btn_github) {
+  color: #ffffff;
+}

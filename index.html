@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/base.css">
+    <link rel="stylesheet" href="static/css/components.css">
+    <link rel="stylesheet" href="static/css/layout.css">
+    <link rel="stylesheet" href="static/css/themes.css">
+    <link rel="icon" href="static/img/logo-icon.svg">
+    <script src="static/js/main.js" type="text/javascript" defer></script>
+    <title>AiraKit</title>
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="board p3 left bb">
+            <div class="row" style="align-items: center; width: 100%;">
+                <div class="icon">
+                    <img src="static/icons/ui/menu.svg" alt="menu" onclick="clickMenu()" class="navbar-toggle">
+                </div>
+                <div class="navbar-logo m3">
+                    <img src="static/img/logo-complete.svg" alt="AiraKit">
+                </div>
+                <div class="navbar-actions">
+                    <button class="btn-theme" onclick="toggleTheme(this)">
+                        <span class="theme-icon">🌙</span>
+                        <span class="theme-label">Dark</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <menu id="itensMenu" class="text-center pt1 pb1">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="usage.html">Usage</a></li>
+                <li><a href="icons.html">Icons</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </menu>
+    </nav>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-badges">
+                <span class="badge">HTML</span>
+                <span class="badge">CSS</span>
+                <span class="badge">JavaScript</span>
+                <span class="badge">Open Source</span>
+            </div>
+            <h1>A design kit<br>that goes anywhere.</h1>
+            <p>AiraKit is a lightweight, static design system built with pure HTML, CSS and JavaScript. Drop it into any project — no build tools, no dependencies, no framework required.</p>
+            <div class="hero-actions">
+                <a href="#download" class="btn_act">Get Started</a>
+                <a href="https://github.com/adrielfilipedesign/AiraKit" target="_blank" class="btn_github">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Features -->
+        <section class="section">
+            <p class="section-label">Features</p>
+            <h2>Everything you need,<br>nothing you don't.</h2>
+            <p>AiraKit gives you a solid foundation of layout utilities, components and design tokens — all in plain CSS classes.</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon-wrap">⚡</div>
+                    <h3>Zero dependencies</h3>
+                    <p>No npm, no build step, no bundler. Just link the CSS and you're good to go.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrap">🎨</div>
+                    <h3>Design tokens</h3>
+                    <p>Colors, spacing and typography defined as CSS custom properties. Easy to override and theme.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrap">🌙</div>
+                    <h3>Dark mode</h3>
+                    <p>Automatic dark mode via <code>prefers-color-scheme</code>, plus a manual toggle with localStorage persistence.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrap">📐</div>
+                    <h3>Layout utilities</h3>
+                    <p>Flexbox-based classes for alignment, spacing, gaps and borders — composable and predictable.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrap">🧩</div>
+                    <h3>Ready-made components</h3>
+                    <p>Buttons, cards, alerts, forms and more — copy the HTML and it just works.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrap">📱</div>
+                    <h3>Responsive</h3>
+                    <p>Mobile-first breakpoints built in. Works on any screen size out of the box.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Compatibility -->
+        <section class="compat-section">
+            <p class="section-label">Compatibility</p>
+            <h2>Works with any stack.</h2>
+            <p>Because AiraKit is pure static CSS and JS, it fits into any project without friction.</p>
+            <div class="compat-grid">
+                <span class="compat-item">Flask</span>
+                <span class="compat-item">Django</span>
+                <span class="compat-item">FastAPI</span>
+                <span class="compat-item">Laravel</span>
+                <span class="compat-item">Ruby on Rails</span>
+                <span class="compat-item">Next.js</span>
+                <span class="compat-item">Nuxt</span>
+                <span class="compat-item">Astro</span>
+                <span class="compat-item">Plain HTML</span>
+                <span class="compat-item">WordPress</span>
+                <span class="compat-item">Joomla</span>
+                <span class="compat-item">Any backend →</span>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Download -->
+        <section class="download-section" id="download">
+            <p class="section-label">Get Started</p>
+            <h2>Add it to your project.</h2>
+            <p>Download the kit and link the CSS in your HTML. No installation needed.</p>
+
+            <div class="download-box">
+                <div class="download-box-header">
+                    <div class="download-box-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <span>base.html · Flask example</span>
+                </div>
+                <pre><code>&lt;!-- In your base template --&gt;
+&lt;head&gt;
+  &lt;link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}"&gt;
+  &lt;link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}"&gt;
+  &lt;link rel="stylesheet" href="{{ url_for('static', filename='css/themes.css') }}"&gt;
+  &lt;script src="{{ url_for('static', filename='js/main.js') }}" defer&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;!-- Then use classes anywhere --&gt;
+&lt;div class="cont txtc p1"&gt;
+  &lt;h1&gt;Hello from AiraKit&lt;/h1&gt;
+  &lt;a href="/start" class="btn_act"&gt;Get Started&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+
+            <div class="download-actions">
+                <a href="https://github.com/adrielfilipedesign/AiraKit/archive/refs/heads/main.zip" class="btn_act" download>↓ Download ZIP</a>
+                <a href="https://github.com/adrielfilipedesign/AiraKit" target="_blank" class="btn_github">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    View on GitHub
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo pt3 pb3">
+            <img src="static/img/logo-complete.svg" alt="AiraKit" class="logo">
+        </div>
+        <div class="txtc pb3">
+            <p>&copy; 2026 Airakit.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleTheme(btn) {
+            const isDark = document.body.classList.toggle('dark-mode');
+            btn.querySelector('.theme-icon').textContent = isDark ? '☀️' : '🌙';
+            btn.querySelector('.theme-label').textContent = isDark ? 'Light' : 'Dark';
+            localStorage.setItem('airakit-theme', isDark ? 'dark' : 'light');
+        }
+
+        (function () {
+            const saved = localStorage.getItem('airakit-theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (saved === 'dark' || (!saved && prefersDark)) {
+                document.body.classList.add('dark-mode');
+                const btn = document.querySelector('.btn-theme');
+                if (btn) {
+                    btn.querySelector('.theme-icon').textContent = '☀️';
+                    btn.querySelector('.theme-label').textContent = 'Light';
+                }
+            }
+        })();
+    </script>
+
+</body>
+</html>

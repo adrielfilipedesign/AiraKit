@@ -5,6 +5,233 @@
   box-sizing: border-box;
 }
 
+.hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            gap: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            letter-spacing: -2px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            max-width: 520px;
+            opacity: 0.7;
+            line-height: 1.7;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .badge {
+            font-size: 12px;
+            font-weight: 500;
+            padding: 4px 12px;
+            border-radius: 999px;
+            border: 1px solid var(--color-outline);
+            opacity: 0.7;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 0.5rem;
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            opacity: 0.5;
+            margin-bottom: 0.75rem;
+        }
+
+        .section h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        .section > p {
+            font-size: 1rem;
+            opacity: 0.65;
+            max-width: 540px;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1rem;
+        }
+
+        .feature-card {
+            border: 1px solid var(--color-outline);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .feature-card .icon-wrap { font-size: 1.5rem; margin-bottom: 0.25rem; }
+        .feature-card h3 { font-size: 1rem; font-weight: 600; }
+        .feature-card p { font-size: 0.875rem; opacity: 0.6; line-height: 1.6; }
+
+        .compat-section {
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .compat-section h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            margin-bottom: 0.75rem;
+        }
+
+        .compat-section > p {
+            opacity: 0.6;
+            max-width: 480px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+
+        .compat-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .compat-item {
+            border: 1px solid var(--color-outline);
+            border-radius: 10px;
+            padding: 0.6rem 1.2rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            opacity: 0.75;
+        }
+
+        .download-section {
+            padding: 5rem 2rem;
+            max-width: 860px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .download-section h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            margin-bottom: 0.75rem;
+        }
+
+        .download-section > p {
+            opacity: 0.6;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            max-width: 480px;
+        }
+
+        .download-box {
+            border: 1px solid var(--color-outline);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .download-box-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 1.25rem;
+            border-bottom: 1px solid var(--color-outline);
+            font-size: 13px;
+            opacity: 0.5;
+        }
+
+        .download-box-dots { display: flex; gap: 6px; }
+        .download-box-dots span {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background: var(--color-outline);
+            display: inline-block;
+        }
+
+        .download-box pre {
+            padding: 1.5rem;
+            font-size: 0.875rem;
+            line-height: 1.8;
+            overflow-x: auto;
+            margin: 0;
+        }
+
+        .download-box code { font-family: 'Courier New', monospace; }
+
+        .download-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .navbar-actions {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            padding-right: 1rem;
+        }
+
+        .btn-theme {
+            background: none;
+            border: 1px solid var(--color-outline);
+            border-radius: 999px;
+            padding: 6px 14px;
+            font-size: 13px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--color-text);
+            transition: all 0.2s ease;
+        }
+
+        .btn-theme:hover { background: var(--color-outline); }
+
+        .divider { border: none; border-top: 1px solid var(--color-outline); margin: 0; }
+
+        .footer-logo img { max-width: 100px; }
+        
 /* Typography */
 @font-face {
   font-family: 'Inter';
@@ -22,6 +249,11 @@ body {
   min-height: 100vh;
   margin: 0;
 }
+
+.img-xs { max-width: 60px; }
+.img-sm { max-width: 100px; }
+.img-md { max-width: 160px; }
+.img-lg { max-width: 240px; }
 
 strong {
   font-weight: 700;

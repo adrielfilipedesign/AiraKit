@@ -1,115 +1,201 @@
-/* ============================================
-   AiraKit — Design Tokens
-   Inclua esse arquivo antes do seu style.css
-   ============================================ */
-
 /* Tema claro (padrão) */
 :root {
-  /* Cores base */
-  --color-bg:          #FFFFFF;
-  --color-bg-subtle:   #F5F5F7;
-  --color-surface:     #EBEBEF;
-  --color-border:      #D1D1DB;
+  /* Fundo */
+  --color-bg:              linear-gradient(180deg, #f5f5f5 0%, #cacaca 100%);
+  --color-bg-subtle:       #F5F5F7;
+  --color-surface:         #EBEBEF;
+
+  /* Bordas / outlines */
+  --color-border:          #D1D1DB;
+  --color-outline:         #adadad;
 
   /* Texto */
-  --color-text:        #1A1A2E;
-  --color-text-muted:  #6B6B80;
+  --color-text:            #1A1A2E;
+  --color-text-muted:      #6B6B80;
+
+  /* Links */
+  --color-link:            #1a73e8;
 
   /* Marca */
-  --color-primary:     #5B4EFF;
-  --color-primary-hover: #4A3EDD;
+  --color-primary:         #5B4EFF;
+  --color-primary-hover:   #4A3EDD;
+
+  /* Botão principal (action) */
+  --color-btn-act-bg:      linear-gradient(180deg, #376af8 0%, #0c48ef 100%);
+  --color-btn-act-bg-hover:linear-gradient(180deg, #0c48ef 0%, #5e88fb 100%);
+  --color-btn-text:        #ffffff;
+
+  /* Botão destrutivo */
+  --color-btn-del-bg:      linear-gradient(180deg, #fb5e5e 0%, #ef0c0c 100%);
+  --color-btn-del-bg-hover:linear-gradient(180deg, #ef0c0c 0%, #f83737 100%);
+
+  /* Botão secundário */
+  --color-btn-sec-bg:      #f0f0f0;
+  --color-btn-sec-bg-hover:#e0e0e0;
+  --color-btn-sec-text:    #333333;
+
+  /* Botão desabilitado */
+  --color-btn-dis-bg:      #cccccc;
+  --color-btn-dis-text:    #888888;
+
+  /* Header / Footer */
+  --color-header-bg:       #FAFAFA;
+  --color-footer-text:     #666666;
 
   /* Feedback */
-  --color-success:     #22C55E;
-  --color-warning:     #F59E0B;
-  --color-danger:      #EF4444;
-  --color-info:        #3B82F6;
+  --color-success:         #22C55E;
+  --color-warning:         #F59E0B;
+  --color-danger:          #EF4444;
+  --color-info:            #3B82F6;
 
   /* Tipografia */
-  --font-body:         'Inter', sans-serif;
-  --font-size-sm:      13px;
-  --font-size-md:      15px;
-  --font-size-lg:      18px;
+  --font-body:             'Inter', sans-serif;
+  --font-size-sm:          13px;
+  --font-size-md:          15px;
+  --font-size-lg:          18px;
 
   /* Espaçamento */
-  --space-xs:          4px;
-  --space-sm:          8px;
-  --space-md:          16px;
-  --space-lg:          24px;
-  --space-xl:          40px;
+  --space-xs:              4px;
+  --space-sm:              8px;
+  --space-md:              16px;
+  --space-lg:              24px;
+  --space-xl:              40px;
 
-  /* Bordas */
-  --radius-sm:         4px;
-  --radius-md:         8px;
-  --radius-lg:         16px;
-  --radius-full:       999px;
+  /* Bordas arredondadas */
+  --radius-sm:             4px;
+  --radius-md:             8px;
+  --radius-lg:             16px;
+  --radius-full:           999px;
 
   /* Sombras */
-  --shadow-sm:         0 1px 3px rgba(0,0,0,0.08);
-  --shadow-md:         0 4px 12px rgba(0,0,0,0.10);
+  --shadow-sm:             0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md:             0 4px 12px rgba(0,0,0,0.10);
 
   /* Transições */
-  --transition:        0.2s ease;
+  --transition:            0.2s ease;
+
+  /* Ícones */
+  --icon-color:            #000000;
 }
 
-/* Tema escuro — automático via sistema */
+/* ============================================
+   Tema escuro — automático via sistema
+   ============================================ */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --color-bg:          #0E0E11;
-    --color-bg-subtle:   #16161A;
-    --color-surface:     #1E1E24;
-    --color-border:      #2A2A35;
+    --color-bg:              #0E0E11;
+    --color-bg-subtle:       #16161A;
+    --color-surface:         #1E1E24;
+    --color-border:          #2A2A35;
+    --color-outline:         #626262;
 
-    --color-text:        #E8E8F0;
-    --color-text-muted:  #6B6B80;
+    --color-text:            #E8E8F0;
+    --color-text-muted:      #6B6B80;
 
-    --color-primary:     #7B68EE;
-    --color-primary-hover: #9B8FFF;
+    --color-link:            #8ab4f8;
 
-    --shadow-sm:         0 1px 3px rgba(0,0,0,0.3);
-    --shadow-md:         0 4px 12px rgba(0,0,0,0.4);
+    --color-primary:         #7B68EE;
+    --color-primary-hover:   #9B8FFF;
+
+    --color-header-bg:       #1f1f1f;
+    --color-footer-text:     #aaaaaa;
+
+    --color-btn-sec-bg:      #2a2a2a;
+    --color-btn-sec-bg-hover:#3a3a3a;
+    --color-btn-sec-text:    #eeeeee;
+
+    --color-btn-dis-bg:      #2a2a2a;
+    --color-btn-dis-text:    #555555;
+
+    --shadow-sm:             0 1px 3px rgba(0,0,0,0.3);
+    --shadow-md:             0 4px 12px rgba(0,0,0,0.4);
+
+    --icon-color:            #ffffff;
   }
 }
 
-/* Tema escuro — forçado manualmente via data-theme="dark" */
+/* ============================================
+   Tema escuro — forçado via data-theme="dark"
+   ============================================ */
 [data-theme="dark"] {
-  --color-bg:          #0E0E11;
-  --color-bg-subtle:   #16161A;
-  --color-surface:     #1E1E24;
-  --color-border:      #2A2A35;
+  --color-bg:              #0E0E11;
+  --color-bg-subtle:       #16161A;
+  --color-surface:         #1E1E24;
+  --color-border:          #2A2A35;
+  --color-outline:         #626262;
 
-  --color-text:        #E8E8F0;
-  --color-text-muted:  #6B6B80;
+  --color-text:            #E8E8F0;
+  --color-text-muted:      #6B6B80;
 
-  --color-primary:     #7B68EE;
-  --color-primary-hover: #9B8FFF;
+  --color-link:            #8ab4f8;
 
-  --shadow-sm:         0 1px 3px rgba(0,0,0,0.3);
-  --shadow-md:         0 4px 12px rgba(0,0,0,0.4);
+  --color-primary:         #7B68EE;
+  --color-primary-hover:   #9B8FFF;
+
+  --color-header-bg:       #1f1f1f;
+  --color-footer-text:     #aaaaaa;
+
+  --color-btn-sec-bg:      #2a2a2a;
+  --color-btn-sec-bg-hover:#3a3a3a;
+  --color-btn-sec-text:    #eeeeee;
+
+  --color-btn-dis-bg:      #2a2a2a;
+  --color-btn-dis-text:    #555555;
+
+  --shadow-sm:             0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md:             0 4px 12px rgba(0,0,0,0.4);
+
+  --icon-color:            #ffffff;
 }
 
-/* Tema claro — forçado manualmente via data-theme="light" */
+/* ============================================
+   Tema claro — forçado via data-theme="light"
+   ============================================ */
 [data-theme="light"] {
-  --color-bg:          #FFFFFF;
-  --color-bg-subtle:   #F5F5F7;
-  --color-surface:     #EBEBEF;
-  --color-border:      #D1D1DB;
+  --color-bg:              linear-gradient(180deg, #f5f5f5 0%, #cacaca 100%);
+  --color-bg-subtle:       #F5F5F7;
+  --color-surface:         #EBEBEF;
+  --color-border:          #D1D1DB;
+  --color-outline:         #adadad;
 
-  --color-text:        #1A1A2E;
-  --color-text-muted:  #6B6B80;
+  --color-text:            #1A1A2E;
+  --color-text-muted:      #6B6B80;
 
-  --color-primary:     #5B4EFF;
-  --color-primary-hover: #4A3EDD;
+  --color-link:            #1a73e8;
 
-  --shadow-sm:         0 1px 3px rgba(0,0,0,0.08);
-  --shadow-md:         0 4px 12px rgba(0,0,0,0.10);
+  --color-primary:         #5B4EFF;
+  --color-primary-hover:   #4A3EDD;
+
+  --color-header-bg:       #FAFAFA;
+  --color-footer-text:     #666666;
+
+  --shadow-sm:             0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md:             0 4px 12px rgba(0,0,0,0.10);
+
+  --icon-color:            #000000;
 }
 
-/* Aplica cor de fundo e texto ao body automaticamente */
+/* ============================================
+   Body — aplica tokens automaticamente
+   ============================================ */
 body {
-  background-color: var(--color-bg);
+  background: var(--color-bg) no-repeat center center fixed;
+  background-size: cover;
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: var(--font-size-md);
   transition: background-color var(--transition), color var(--transition);
+}
+
+/* SVGs adaptam ao tema no dark mode automático */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) body img[src$=".svg"]:not(.logo):not([src*="logo"]),
+  :root:not([data-theme="light"]) body .ui-icon {
+    filter: invert(1);
+  }
+}
+
+[data-theme="dark"] img[src$=".svg"]:not(.logo):not([src*="logo"]),
+[data-theme="dark"] .ui-icon {
+  filter: invert(1);
 }

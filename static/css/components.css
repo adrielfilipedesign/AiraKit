@@ -214,7 +214,6 @@ nav {
 footer {
   background-color: var(--color-header-bg);
 }
-/* btn_github — preto no tema claro, branco no tema escuro */
 .btn_github {
   display: inline-flex;
   align-items: center;
@@ -237,14 +236,13 @@ footer {
   text-decoration: none;
 }
 
-/* Dark mode — inverte as cores */
-body.dark-mode .btn_github {
+[data-theme="dark"] .btn_github {
   background: #ffffff;
   color: #000000;
   border-color: #ffffff;
 }
 
-body.dark-mode .btn_github:hover {
+[data-theme="dark"] .btn_github:hover {
   background: #e0e0e0;
 }
 

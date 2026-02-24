@@ -9,42 +9,14 @@
     <link rel="stylesheet" href="static/css/themes.css">
     <link rel="icon" href="static/img/logo-icon.svg">
     <script src="static/js/main.js" type="text/javascript" defer></script>
-    <title>AiraKit</title>
+    <title>AiraKit - A simple way to build web interfaces</title>
 
 </head>
+<aira-navbar></aira-navbar>
+
 <body>
-
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="board p3 left bb">
-            <div class="row" style="align-items: center; width: 100%;">
-                <div class="icon">
-                    <img src="static/icons/ui/menu.svg" alt="menu" onclick="clickMenu()" class="navbar-toggle">
-                </div>
-                <div class="navbar-logo m3">
-                    <img src="static/img/logo-complete.svg" alt="AiraKit">
-                </div>
-                <div class="navbar-actions">
-                    <button class="btn-theme" onclick="toggleTheme(this)">
-                        <span class="theme-icon">🌙</span>
-                        <span class="theme-label">Dark</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <menu id="itensMenu" class="text-center pt1 pb1">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="usage.html">Usage</a></li>
-                <li><a href="icons.html">Icons</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </menu>
-    </nav>
-
+    
     <main>
-
         <!-- Hero -->
         <section class="hero">
             <div class="hero-badges">
@@ -173,38 +145,9 @@
         </section>
 
     </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-logo pt3 pb3">
-            <img src="static/img/logo-complete.svg" alt="AiraKit" class="logo">
-        </div>
-        <div class="txtc pb3">
-            <p>&copy; 2026 Airakit.</p>
-        </div>
-    </footer>
-
-    <script>
-        function toggleTheme(btn) {
-            const isDark = document.body.classList.toggle('dark-mode');
-            btn.querySelector('.theme-icon').textContent = isDark ? '☀️' : '🌙';
-            btn.querySelector('.theme-label').textContent = isDark ? 'Light' : 'Dark';
-            localStorage.setItem('airakit-theme', isDark ? 'dark' : 'light');
-        }
-
-        (function () {
-            const saved = localStorage.getItem('airakit-theme');
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            if (saved === 'dark' || (!saved && prefersDark)) {
-                document.body.classList.add('dark-mode');
-                const btn = document.querySelector('.btn-theme');
-                if (btn) {
-                    btn.querySelector('.theme-icon').textContent = '☀️';
-                    btn.querySelector('.theme-label').textContent = 'Light';
-                }
-            }
-        })();
-    </script>
-
+    
 </body>
+
+    <aira-footer></aira-footer>
+
 </html>

@@ -85,6 +85,15 @@ AiraKit works the same way with Django, Laravel, Next.js, plain HTML or any othe
 
 ---
 
+## Margin
+
+| Class | Value |
+|---|---|
+| `.m1` / `.m2` / `.m3` | 3rem / 2rem / 1rem |
+| `.mt*` `.mb*` `.ml*` `.mr*` | top / bottom / left / right variants |
+
+---
+
 ## Components
 
 ### Buttons

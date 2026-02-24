@@ -1,9 +1,92 @@
 /* btn appearance */
 .btn_act {
+  position: relative;
   display: inline-block;
   padding: 12px 40px;
-  background:  var(--color-btn-act-bg);
+  background: var(--color-btn-act-bg);
   color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.6s ease;
+  z-index: 1;
+}
+
+/* camada hover */
+.btn_act::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-btn-act-bg-hover);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1; /* 🔥 fica atrás do conteúdo */
+}
+
+.btn_act:hover::before {
+  opacity: 1;
+}
+
+.btn_act:hover {
+  transform: translateY(-3px);
+}
+
+/* texto sempre acima */
+.btn_act span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn_act:hover::before {
+  opacity: 1;
+}
+
+.btn_act:hover {
+  transform: translateY(-3px);
+}
+
+.btn_del {
+  position: relative;
+  display: inline-block;
+  padding: 12px 40px;
+  background: var(--color-btn-del-bg-hover);
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  z-index: 1;
+}
+
+/* camada do hover */
+.btn_del::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-btn-del-bg);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.btn_del:hover::before {
+  opacity: 1;
+}
+
+.btn_del:hover {
+  transform: translateY(-1px);
+}
+
+/* Botão Secundário */
+.btn_sec {
+  display: inline-block;
+  padding: 12px 40px;
+  background: var(--color-btn-sec-bg);
+  color: var(--color-btn-sec-text);
   text-decoration: none;
   border-radius: 25px;
   font-size: 16px;
@@ -11,30 +94,44 @@
   transition: all 0.3s ease;
 }
 
-.btn_act:hover {
-  background: var(--color-btn-act-bg-hover);
+.btn_sec:hover {
+  background: var(--color-btn-sec-bg-hover);
   transform: translateY(-3px);
-  transition: all 0.5s ease;
   text-decoration: none;
 }
 
-.btn_del {
+/* Botão Outline */
+.btn_out {
   display: inline-block;
   padding: 12px 40px;
-  background:  var(--color-btn-del-bg-hover);
-  color: white;
+  background: transparent;
+  color: var(--color-text);
   text-decoration: none;
-  border-radius: 20px;
+  border-radius: 25px;
+  border: 1px solid var(--color-outline);
   font-size: 16px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
 
-.btn_del:hover {
-  background: var(--color-btn-del-bg);
-  transform: translateY(-1px);
-  transition: all 0.2s ease;
+.btn_out:hover {
+  background: var(--color-outline);
+  transform: translateY(-3px);
   text-decoration: none;
+}
+
+/* Botão Disabled */
+.btn_dis {
+  display: inline-block;
+  padding: 12px 40px;
+  background: var(--color-btn-dis-bg);
+  color: var(--color-btn-dis-text);
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: not-allowed;
+  opacity: 0.45;
+  pointer-events: none;
 }
 
 /* navbar */
@@ -168,3 +265,26 @@ body.dark-mode li,
 body.dark-mode a:not(.btn_act):not(.btn_del):not(.btn_github) {
   color: #ffffff;
 }
+
+/* Buttons */
+        .btn-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .btn-item-label {
+            font-size: 11px;
+            opacity: 0.45;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }

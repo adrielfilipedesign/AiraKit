@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/base.css">
+    <link rel="stylesheet" href="static/css/components.css">
+    <link rel="stylesheet" href="static/css/layout.css">
+    <link rel="stylesheet" href="static/css/themes.css">
+    <link rel="icon" href="static/img/logo-icon.svg">
+    <script src="static/js/main.js" type="text/javascript" defer></script>
+    <title>Assets & Icons — AiraKit</title>
+</head>
+
+ <aira-navbar></aira-navbar>
+
+<body>
+    
+    <div class="page-hero">
+        <p class="section-label">Reference</p>
+        <h1>Assets & Icons</h1>
+        <p>All buttons, icons and design tokens available in AiraKit. Click any icon to copy its path.</p>
+    </div>
+
+    <div class="assets-wrapper">
+
+        <!-- Buttons -->
+        <div class="asset-section">
+            <div class="asset-section-header">
+                <h2>Buttons</h2>
+                <span>5 variants</span>
+            </div>
+            <div class="btn-showcase">
+                <div class="btn-item">
+                    <a class="btn_act">Primary</a>
+                    <span class="btn-item-label">.btn_act</span>
+                </div>
+                <div class="btn-item">
+                    <a class="btn_sec">Secondary</a>
+                    <span class="btn-item-label">.btn_sec</span>
+                </div>
+                <div class="btn-item">
+                    <a class="btn_out">Outline</a>
+                    <span class="btn-item-label">.btn_out</span>
+                </div>
+                <div class="btn-item">
+                    <a class="btn_del">Delete</a>
+                    <span class="btn-item-label">.btn_del</span>
+                </div>
+                <div class="btn-item">
+                    <span class="btn_dis">Disabled</span>
+                    <span class="btn-item-label">.btn_dis</span>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- UI Icons -->
+        <div class="asset-section">
+            <div class="asset-section-header">
+                <h2>UI Icons</h2>
+                <span>18 icons</span>
+            </div>
+            <div class="icons-grid" id="ui-icons-grid">
+                <!-- preenchido via JS -->
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- Colors -->
+        <div class="asset-section">
+            <div class="asset-section-header">
+                <h2>Design Tokens</h2>
+                <span>CSS variables</span>
+            </div>
+            <div class="colors-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--color-bg)"></div>
+                    <div class="color-info">
+                        <span class="color-name">Background</span>
+                        <span class="color-var">--color-bg</span>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--color-header-bg)"></div>
+                    <div class="color-info">
+                        <span class="color-name">Surface</span>
+                        <span class="color-var">--color-header-bg</span>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--color-text)"></div>
+                    <div class="color-info">
+                        <span class="color-name">Text</span>
+                        <span class="color-var">--color-text</span>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--color-link)"></div>
+                    <div class="color-info">
+                        <span class="color-name">Link</span>
+                        <span class="color-var">--color-link</span>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--color-outline)"></div>
+                    <div class="color-info">
+                        <span class="color-name">Outline</span>
+                        <span class="color-var">--color-outline</span>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--color-btn-act-bg)"></div>
+                    <div class="color-info">
+                        <span class="color-name">Primary</span>
+                        <span class="color-var">--color-btn-act-bg</span>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--color-btn-del-bg)"></div>
+                    <div class="color-info">
+                        <span class="color-name">Delete</span>
+                        <span class="color-var">--color-btn-del-bg</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">Copied!</div>
+
+    <aira-footer></aira-footer>
+
+
+</body>
+</html>

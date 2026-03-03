@@ -286,3 +286,25 @@ body.dark-mode a:not(.btn_act):not(.btn_del):not(.btn_github) {
             text-transform: uppercase;
             font-weight: 500;
         }
+
+        .btn_kofi {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            background: #FF5E5B;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .btn_kofi:hover {
+            background: #e04e4b;
+            transform: translateY(-3px);
+            text-decoration: none;
+        }

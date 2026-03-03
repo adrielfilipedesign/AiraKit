@@ -652,3 +652,182 @@
   flex: 1;
   min-width: 200px;
 }
+
+/* ============================================
+   AiraKit — Alert
+   ============================================ */
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+}
+
+.alert-icon {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.alert-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.alert-title {
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+}
+
+.alert-desc {
+  opacity: 0.85;
+  font-size: 13px;
+}
+
+/* Variantes — Light mode */
+.alert--info {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+
+.alert--success {
+  background: #f0fdf4;
+  color: #15803d;
+  border-color: #bbf7d0;
+}
+
+.alert--warning {
+  background: #fffbeb;
+  color: #92400e;
+  border-color: #fde68a;
+}
+
+.alert--error {
+  background: #fef2f2;
+  color: #b91c1c;
+  border-color: #fecaca;
+}
+
+/* Variantes — Dark mode via data-theme */
+[data-theme="dark"] .alert--info {
+  background: #0d1f3c;
+  color: #93c5fd;
+  border-color: #1e3a5f;
+}
+
+[data-theme="dark"] .alert--success {
+  background: #052e16;
+  color: #4ade80;
+  border-color: #166534;
+}
+
+[data-theme="dark"] .alert--warning {
+  background: #271900;
+  color: #fbbf24;
+  border-color: #78350f;
+}
+
+[data-theme="dark"] .alert--error {
+  background: #2d0000;
+  color: #f87171;
+  border-color: #7f1d1d;
+}
+
+/* Dark mode automático via prefers-color-scheme */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .alert--info    { background: #0d1f3c; color: #93c5fd; border-color: #1e3a5f; }
+  :root:not([data-theme="light"]) .alert--success { background: #052e16; color: #4ade80; border-color: #166534; }
+  :root:not([data-theme="light"]) .alert--warning { background: #271900; color: #fbbf24; border-color: #78350f; }
+  :root:not([data-theme="light"]) .alert--error   { background: #2d0000; color: #f87171; border-color: #7f1d1d; }
+}
+
+
+/* ============================================
+   AiraKit — Badge
+   ============================================ */
+.badge-kit {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  border: 1px solid var(--color-outline);
+  color: var(--color-text);
+  background: transparent;
+  white-space: nowrap;
+}
+
+/* Variantes semânticas */
+.badge-kit--info {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+
+.badge-kit--success {
+  background: #f0fdf4;
+  color: #15803d;
+  border-color: #bbf7d0;
+}
+
+.badge-kit--warning {
+  background: #fffbeb;
+  color: #92400e;
+  border-color: #fde68a;
+}
+
+.badge-kit--error {
+  background: #fef2f2;
+  color: #b91c1c;
+  border-color: #fecaca;
+}
+
+/* Outline — só borda, sem fundo */
+.badge-kit--outline {
+  background: transparent;
+  border-color: var(--color-text);
+  color: var(--color-text);
+}
+
+/* Solid — fundo escuro */
+.badge-kit--solid {
+  background: var(--color-text);
+  color: var(--color-bg-subtle);
+  border-color: transparent;
+}
+
+/* Dot indicator */
+.badge-kit--dot {
+  padding-left: 8px;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* Dark mode — variantes semânticas */
+[data-theme="dark"] .badge-kit--info    { background: #0d1f3c; color: #93c5fd; border-color: #1e3a5f; }
+[data-theme="dark"] .badge-kit--success { background: #052e16; color: #4ade80; border-color: #166534; }
+[data-theme="dark"] .badge-kit--warning { background: #271900; color: #fbbf24; border-color: #78350f; }
+[data-theme="dark"] .badge-kit--error   { background: #2d0000; color: #f87171; border-color: #7f1d1d; }
+[data-theme="dark"] .badge-kit--solid   { background: var(--color-text); color: #0E0E11; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .badge-kit--info    { background: #0d1f3c; color: #93c5fd; border-color: #1e3a5f; }
+  :root:not([data-theme="light"]) .badge-kit--success { background: #052e16; color: #4ade80; border-color: #166534; }
+  :root:not([data-theme="light"]) .badge-kit--warning { background: #271900; color: #fbbf24; border-color: #78350f; }
+  :root:not([data-theme="light"]) .badge-kit--error   { background: #2d0000; color: #f87171; border-color: #7f1d1d; }
+  :root:not([data-theme="light"]) .badge-kit--solid   { background: var(--color-text); color: #0E0E11; }
+}

@@ -1,5 +1,10 @@
+/* ============================================
+   AiraKit — Main
+   Load order: main.js → dark-mode.js → ui.js → toast.js
+   ============================================ */
+
 /* --------------------------------------------
-   Theme — aplica antes do render para evitar flash
+   Theme — apply before render to avoid flash
    -------------------------------------------- */
 (function () {
   const saved     = localStorage.getItem('airakit-theme');
@@ -8,16 +13,9 @@
   document.documentElement.setAttribute('data-theme', theme);
 })();
 
-function toggleTheme(btn) {
-  const html    = document.documentElement;
-  const isDark  = html.getAttribute('data-theme') === 'dark';
-  const next    = isDark ? 'light' : 'dark';
-
-  html.setAttribute('data-theme', next);
-  localStorage.setItem('airakit-theme', next);
-  _updateThemeBtn(btn, next);
-}
-
+/* --------------------------------------------
+   Theme button — sync icon + label
+   -------------------------------------------- */
 function _updateThemeBtn(btn, theme) {
   if (!btn) return;
   const isDark = theme === 'dark';
@@ -25,8 +23,16 @@ function _updateThemeBtn(btn, theme) {
   btn.querySelector('.theme-label').textContent = isDark ? 'Light' : 'Dark';
 }
 
+function toggleTheme(btn) {
+  const html  = document.documentElement;
+  const next  = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('airakit-theme', next);
+  _updateThemeBtn(btn, next);
+}
+
 /* --------------------------------------------
-   Navbar (Web Component)
+   Navbar — Web Component
    -------------------------------------------- */
 class AiraNavbar extends HTMLElement {
   connectedCallback() {
@@ -35,19 +41,17 @@ class AiraNavbar extends HTMLElement {
       .then(html => {
         this.innerHTML = html;
 
-        // Sincroniza botão de tema com o estado atual
         const btn   = this.querySelector('.btn-theme');
         const theme = document.documentElement.getAttribute('data-theme');
         _updateThemeBtn(btn, theme);
 
-        // Fecha menu ao clicar fora
         document.addEventListener('click', _handleOutsideClick);
       });
   }
 }
 
 /* --------------------------------------------
-   Footer (Web Component)
+   Footer — Web Component
    -------------------------------------------- */
 class AiraFooter extends HTMLElement {
   connectedCallback() {
@@ -56,7 +60,6 @@ class AiraFooter extends HTMLElement {
       .then(html => {
         this.innerHTML = html;
 
-        // Sincroniza botão de tema com o estado atual
         const btn   = this.querySelector('.btn-theme');
         const theme = document.documentElement.getAttribute('data-theme');
         _updateThemeBtn(btn, theme);
@@ -64,14 +67,17 @@ class AiraFooter extends HTMLElement {
   }
 }
 
+/* --------------------------------------------
+   Side menu — outside click handler
+   -------------------------------------------- */
 function _handleOutsideClick(event) {
-  const itensMenu  = document.getElementById('itensMenu');
-  const botaoMenu  = document.querySelector('.navbar-toggle');
-  if (!itensMenu || !botaoMenu) return;
+  const menu   = document.getElementById('itensMenu');
+  const toggle = document.querySelector('.navbar-toggle');
+  if (!menu || !toggle) return;
 
-  const clicouFora = !itensMenu.contains(event.target) && !botaoMenu.contains(event.target);
-  if (itensMenu.classList.contains('active') && clicouFora) {
-    itensMenu.classList.remove('active');
+  const clickedOutside = !menu.contains(event.target) && !toggle.contains(event.target);
+  if (menu.classList.contains('active') && clickedOutside) {
+    menu.classList.remove('active');
   }
 }
 
@@ -83,7 +89,7 @@ customElements.define('aira-navbar', AiraNavbar);
 customElements.define('aira-footer', AiraFooter);
 
 /* --------------------------------------------
-   Icons — grid + copy to clipboard
+   Icons grid — build + copy to clipboard
    -------------------------------------------- */
 const uiIcons = [
   'checkbox-checked',
@@ -106,14 +112,6 @@ const uiIcons = [
   'trash',
   'upload'
 ];
-
-function showToast(msg) {
-  const toast = document.getElementById('toast');
-  if (!toast) return;
-  toast.textContent = msg;
-  toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), 2000);
-}
 
 function buildIconGrid() {
   const grid = document.getElementById('ui-icons-grid');

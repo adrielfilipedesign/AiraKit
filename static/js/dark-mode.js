@@ -1,59 +1,72 @@
 /* ============================================
-   AiraKit — Dark Mode Toggle
-   Inclua esse arquivo antes do </body>
+   AiraKit — Dark Mode
+   Handles theme persistence and system preference sync.
+   Requires: main.js (loaded before this file)
    ============================================ */
 
 (function () {
   const STORAGE_KEY = 'airakit-theme';
-  const root = document.documentElement;
+  const root        = document.documentElement;
 
-  // Detecta preferência salva ou usa a do sistema
+  /* ------------------------------------------
+     Detect saved preference or fall back to system
+     ------------------------------------------ */
   function getPreferredTheme() {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) return saved;
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
 
-  // Aplica o tema no <html> via data-theme
+  /* ------------------------------------------
+     Apply theme via data-theme on <html>
+     ------------------------------------------ */
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
     localStorage.setItem(STORAGE_KEY, theme);
 
-    // Atualiza todos os botões de toggle na página
     document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
-      btn.setAttribute('aria-label', theme === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro');
+      btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
       btn.setAttribute('data-current-theme', theme);
     });
   }
 
-  // Alterna entre claro e escuro
+  /* ------------------------------------------
+     Toggle between light and dark
+     ------------------------------------------ */
   function toggleTheme() {
     const current = root.getAttribute('data-theme') || getPreferredTheme();
     applyTheme(current === 'dark' ? 'light' : 'dark');
   }
 
-  // Aplica tema imediatamente (evita flash)
+  /* ------------------------------------------
+     Apply theme immediately to avoid flash
+     ------------------------------------------ */
   applyTheme(getPreferredTheme());
 
-  // Inicializa os botões quando o DOM estiver pronto
+  /* ------------------------------------------
+     Bind toggle buttons on DOM ready
+     ------------------------------------------ */
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
       btn.addEventListener('click', toggleTheme);
     });
   });
 
-  // Escuta mudança de preferência do sistema em tempo real
+  /* ------------------------------------------
+     React to system preference changes in real time
+     (only if user hasn't set a manual preference)
+     ------------------------------------------ */
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
-    // Só atualiza automaticamente se o usuário não tiver escolhido manualmente
     if (!localStorage.getItem(STORAGE_KEY)) {
       applyTheme(e.matches ? 'dark' : 'light');
     }
   });
 
-  // Expõe funções globalmente caso precise usar no seu próprio JS
-  window.AiraKit = {
-    toggleTheme: toggleTheme,
-    setTheme: applyTheme,
-    getTheme: function () { return root.getAttribute('data-theme'); }
-  };
+  /* ------------------------------------------
+     Public API
+     ------------------------------------------ */
+  window.AiraKit = window.AiraKit || {};
+  window.AiraKit.toggleTheme = toggleTheme;
+  window.AiraKit.setTheme    = applyTheme;
+  window.AiraKit.getTheme    = function () { return root.getAttribute('data-theme'); };
 })();

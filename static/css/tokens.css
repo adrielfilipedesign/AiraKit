@@ -1,42 +1,49 @@
-/* Tema claro (padrão) */
+/* ============================================
+   AiraKit — Design Tokens
+   Load this file FIRST
+   ============================================ */
+
+/* ------------------------------------------
+   Light theme (default)
+   ------------------------------------------ */
 :root {
-  /* Fundo */
+  /* Background */
   --color-bg:              linear-gradient(180deg, #f5f5f5 0%, #cacaca 100%);
   --color-bg-subtle:       #F5F5F7;
   --color-surface:         #EBEBEF;
 
-  /* Bordas / outlines */
+  /* Borders */
   --color-border:          #D1D1DB;
   --color-outline:         #adadad;
 
-  /* Texto */
+  /* Text */
   --color-text:            #1A1A2E;
   --color-text-muted:      #6B6B80;
 
   /* Links */
   --color-link:            #1a73e8;
 
-  /* Marca */
+  /* Brand */
   --color-primary:         #5B4EFF;
   --color-primary-hover:   #4A3EDD;
 
-  /* Botão principal (action) */
-  --color-btn-act-bg:      linear-gradient(180deg, #376af8 0%, #0c48ef 100%);
-  --color-btn-act-bg-hover:linear-gradient(180deg, #0c48ef 0%, #5e88fb 100%);
-  --color-btn-text:        #ffffff;
+  /* Primary button (action) */
+  --color-btn-act-bg:       linear-gradient(180deg, #376af8 0%, #0c48ef 100%);
+  --color-btn-act-bg-hover: linear-gradient(180deg, #0c48ef 0%, #5e88fb 100%);
+  --color-btn-text:         #ffffff;
 
-  /* Botão destrutivo */
-  --color-btn-del-bg:      linear-gradient(180deg, #fb5e5e 0%, #ef0c0c 100%);
-  --color-btn-del-bg-hover:linear-gradient(180deg, #ef0c0c 0%, #f83737 100%);
+  /* Destructive button */
+  --color-btn-del-bg:       linear-gradient(180deg, #fb5e5e 0%, #ef0c0c 100%);
+  --color-btn-del-bg-hover: linear-gradient(180deg, #ef0c0c 0%, #f83737 100%);
 
-  /* Botão secundário */
-  --color-btn-sec-bg:      #f0f0f0;
-  --color-btn-sec-bg-hover:#e0e0e0;
-  --color-btn-sec-text:    #333333;
+  /* Secondary button */
+  --color-btn-sec-bg:       #f0f0f0;
+  --color-btn-sec-bg-hover: #e0e0e0;
+  --color-btn-sec-text:     #333333;
 
-  /* Botão desabilitado */
-  --color-btn-dis-bg:      #cccccc;
-  --color-btn-dis-text:    #888888;
+  /* Disabled button */
+  --color-btn-dis-bg:       #cccccc;
+  --color-btn-dis-text:     #888888;
 
   /* Header / Footer */
   --color-header-bg:       #FAFAFA;
@@ -48,39 +55,56 @@
   --color-danger:          #EF4444;
   --color-info:            #3B82F6;
 
-  /* Tipografia */
+  /* Icons */
+  --icon-color:            #000000;
+
+  /* Typography */
   --font-body:             'Inter', sans-serif;
   --font-size-sm:          13px;
   --font-size-md:          15px;
   --font-size-lg:          18px;
 
-  /* Espaçamento */
+  /* Spacing */
   --space-xs:              4px;
   --space-sm:              8px;
   --space-md:              16px;
   --space-lg:              24px;
   --space-xl:              40px;
 
-  /* Bordas arredondadas */
+  /* Border radius */
   --radius-sm:             4px;
   --radius-md:             8px;
   --radius-lg:             16px;
   --radius-full:           999px;
 
-  /* Sombras */
+  /* Shadows */
   --shadow-sm:             0 1px 3px rgba(0,0,0,0.08);
   --shadow-md:             0 4px 12px rgba(0,0,0,0.10);
 
-  /* Transições */
+  /* Transitions */
   --transition:            0.2s ease;
 
-  /* Ícones */
-  --icon-color:            #000000;
+  /* Forms */
+  --form-radius:           var(--radius-md);
+  --form-border:           var(--color-outline);
+  --form-border-focus:     var(--color-primary);
+  --form-bg:               transparent;
+  --form-text:             var(--color-text);
+  --form-placeholder:      var(--color-text-muted);
+  --form-padding-y:        10px;
+  --form-padding-x:        14px;
+  --form-font-size:        var(--font-size-md);
+  --form-transition:       border-color var(--transition), box-shadow var(--transition);
+  --form-shadow-focus:     0 0 0 3px rgba(91, 78, 255, 0.15);
+  --form-label-size:       13px;
+  --form-label-weight:     500;
+  --form-gap:              6px;
+  --form-hint-size:        12px;
 }
 
-/* ============================================
-   Tema escuro — automático via sistema
-   ============================================ */
+/* ------------------------------------------
+   Dark theme — automatic via system preference
+   ------------------------------------------ */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --color-bg:              #0E0E11;
@@ -111,12 +135,14 @@
     --shadow-md:             0 4px 12px rgba(0,0,0,0.4);
 
     --icon-color:            #ffffff;
+
+    --form-shadow-focus:     0 0 0 3px rgba(123, 104, 238, 0.2);
   }
 }
 
-/* ============================================
-   Tema escuro — forçado via data-theme="dark"
-   ============================================ */
+/* ------------------------------------------
+   Dark theme — forced via data-theme="dark"
+   ------------------------------------------ */
 [data-theme="dark"] {
   --color-bg:              #0E0E11;
   --color-bg-subtle:       #16161A;
@@ -146,11 +172,13 @@
   --shadow-md:             0 4px 12px rgba(0,0,0,0.4);
 
   --icon-color:            #ffffff;
+
+  --form-shadow-focus:     0 0 0 3px rgba(123, 104, 238, 0.2);
 }
 
-/* ============================================
-   Tema claro — forçado via data-theme="light"
-   ============================================ */
+/* ------------------------------------------
+   Light theme — forced via data-theme="light"
+   ------------------------------------------ */
 [data-theme="light"] {
   --color-bg:              linear-gradient(180deg, #f5f5f5 0%, #cacaca 100%);
   --color-bg-subtle:       #F5F5F7;
@@ -173,29 +201,6 @@
   --shadow-md:             0 4px 12px rgba(0,0,0,0.10);
 
   --icon-color:            #000000;
-}
 
-/* ============================================
-   Body — aplica tokens automaticamente
-   ============================================ */
-body {
-  background: var(--color-bg) no-repeat center center fixed;
-  background-size: cover;
-  color: var(--color-text);
-  font-family: var(--font-body);
-  font-size: var(--font-size-md);
-  transition: background-color var(--transition), color var(--transition);
-}
-
-/* SVGs adaptam ao tema no dark mode automático */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) body img[src$=".svg"]:not(.logo):not([src*="logo"]),
-  :root:not([data-theme="light"]) body .ui-icon {
-    filter: invert(1);
-  }
-}
-
-[data-theme="dark"] img[src$=".svg"]:not(.logo):not([src*="logo"]),
-[data-theme="dark"] .ui-icon {
-  filter: invert(1);
+  --form-shadow-focus:     0 0 0 3px rgba(91, 78, 255, 0.15);
 }
